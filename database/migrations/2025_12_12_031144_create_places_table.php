@@ -11,23 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('destinations', function (Blueprint $table) {
+        Schema::create('places', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('category')->nullable();
-            $table->string('type')->default('destination');
-            $table->string('title')->nullable();
-            $table->string('subtitle')->nullable();
-            $table->text('deskripsi')->nullable();
+            $table->text('description')->nullable();
             $table->string('address')->nullable();
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();
             $table->string('contact')->nullable();
-            $table->boolean('is_rekomend')->default(false);
+            $table->string('ticket_price')->nullable();
             $table->json('opening_hours')->nullable();
             $table->json('gallery')->nullable();
             $table->json('tags')->nullable();
+            $table->boolean('is_featured')->default(false);
+            $table->json('sosial_links')->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('destinations');
+        Schema::dropIfExists('places');
     }
 };
