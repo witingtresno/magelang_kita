@@ -39,10 +39,10 @@ class PlaceForm
                             Select::make('category')
                                 ->label('Kategori')
                                 ->options([
-                                    'wisata_alam' => 'Wisata Alam',
-                                    'wisata_budaya' => 'Wisata Budaya',
-                                    'wisata_religi' => 'Wisata Religi',
-                                    'wisata_keluarga' => 'Wisata Keluarga',
+                                    'wisata alam' => 'Wisata Alam',
+                                    'wisata budaya' => 'Wisata Budaya',
+                                    'wisata religi' => 'Wisata Religi',
+                                    'wisata keluarga' => 'Wisata Keluarga',
                                 ])
                                 ->searchable()
                                 ->required()

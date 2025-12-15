@@ -36,10 +36,10 @@ class KulinerForm
                             Select::make('category')
                                 ->label('Jenis Kuliner')
                                 ->options([
-                                    'street_food' => 'Street Food',
+                                    'street food' => 'Street Food',
                                     'cafe' => 'Kafe',
                                     'restaurant' => 'Restoran',
-                                    'oleh_oleh' => 'Oleh-oleh',
+                                    'oleh oleh' => 'Oleh-oleh',
                                 ])
                                 ->required()
                                 ->searchable(),

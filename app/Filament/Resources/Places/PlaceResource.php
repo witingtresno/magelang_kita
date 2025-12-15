@@ -18,7 +18,7 @@ class PlaceResource extends Resource
 {
     protected static ?string $model = Place::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::HomeModern;
 
     protected static ?string $recordTitleAttribute = 'name';
 
