@@ -11,11 +11,11 @@ class NewsApiController extends Controller
 {
     public function index(Request $request)
     {
-        $news = News::query()
-            ->where('is_published', true)
-            ->when($request->category, fn($q) => $q->where('category', $request->category))
+        $perpage = $request->integer('per_page', 20);
+        $news = News::where('is_published', true)
+            ->when($request->category, fn($q) => $q->where('category_id', $request->category))
             ->latest('published_at')
-            ->paginate(20);
+            ->paginate($perpage);
 
         return NewsResource::collection($news);
     }
